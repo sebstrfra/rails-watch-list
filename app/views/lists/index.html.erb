@@ -1,8 +1,24 @@
-<h1>List of Lists :-) </h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://source.unsplash.com/atsUqIm3wxo/1600x900');">
+  <div class="container">
+    <h1>Welcome to <strong>MovieLister</strong></h1>
+    <p>The best place for all your movie lists</p>
+  </div>
+</div>
 
-<ul>
+<p>Pick a list:</p>
+
+
+<ul class="list-group">
   <% @lists.each do |list| %>
-    <li><%= link_to list.name, list_path(list) %> - <%= link_to "DELETE", list_path(list), method: :delete, data: { confirm: "Are you sure?" } %></li>
+    <li class="list-group-item">
+      <div class="card-product">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        <div class="card-product-infos">
+          <h2><%= link_to list.name, list_path(list) %></h2>
+          <p>That should be a reall nice List. <br> <%= link_to "DELETE", list_path(list), method: :delete, data: { confirm: "Are you sure?" } %></p>
+        </div>
+      </div>
+    </li>
   <% end %>
 </ul>
 
